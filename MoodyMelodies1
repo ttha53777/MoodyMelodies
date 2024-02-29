@@ -1,0 +1,27 @@
+import random
+
+# Define the dictionary of moods and songs
+mood_songs = {
+    "Happy": ["I wish you love- Laufey", "Kingston- Faye Webster", "Valentine- Laufey", "What’s my name? -Rihanna,Drake", "There is a light that never goes out- The smiths"],
+    "Sad": ["Happiness is a butterfly- Lana Del Rey", "I don’t smoke- Mitski, Audiotree", "Not strong enough- Boy Genius", "Francis Forever- Mitski", "Hope is a dangerous thing for a woman like me to have - Lana Del Rey"],
+    "Angry": ["Please please please Let me get what I want- Deftones", "Drunk walk home -Mitski (last 30 seconds is real)", "Norman FUCKING Rockwell- Lana Del Rey", "Like a boy- Ciara", "I bet on losing dogs- Mitski"],
+    "Tired": ["Seasons-wave to earth", "My love is mine all mine- Mitski", "Asleep Among Endives- Ichiko Aoba", "Love- Lana Del Rey", "K- CAS (cigarettes after sex)"],
+    "Nostalgia": ["Rather be- Clean Bandit", "Cheerleader- OMI", "Can’t hold us- Macklemore", "Dear future husband- Megan Trainor", "Baby- Justin Bieber"]
+}
+
+# Function to choose a song based on mood
+def choose_song(mood):
+    if mood in mood_songs:
+        return random.choice(mood_songs[mood])
+    else:
+        return "Sorry, no songs found for that mood."
+
+# Main program
+while True:
+    user_mood = input("Enter your mood (Happy/Sad/Angry/Tired/Nostalgia): ").capitalize()
+    if user_mood == "Exit":
+        print("Goodbye!")
+        break
+    else:
+        song = choose_song(user_mood)
+        print("Recommended song for your mood:", song)
